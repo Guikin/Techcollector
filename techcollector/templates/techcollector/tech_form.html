@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  <!-- Leaving the action empty makes the form post to the same url used to display it -->
+  <div class="w-fit mx-auto my-28 bg-slate-800">
+   {% if object %}
+    <h1 class="mx-16 text-sky-400 text-4xl p-5 ">Edit <span class=" text-sky-400 text-4xl  ">{{object.name}}</span></h1>
+  {% else %}
+    <h1 class="mx-16 text-sky-400 text-4xl p-5 ">Add Tech</h1>
+  {% endif %}
+  <form action="" method="post" class="bg-slate-800 text-sky-400 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <!-- Django requires the following for security purposes -->
+    {% csrf_token %}
+    <table class="w-fit">
+      <!-- Render the inputs inside of <tr>s & <td>s -->
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit!" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-4 m-12 rounded focus:outline-none focus:shadow-outline">
+  </form>
+</div>
+{% endblock %}

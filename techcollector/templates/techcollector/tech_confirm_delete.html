@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div div class="block p-6 m-6 max-w-sm e rounded-lg border border-blue-200 shadow-md bg-gray-800 dark:border-gray-700 text-white mx-auto">
+  <h1 class="font-bold text-gray-700 dark:text-gray-400">Delete Tech</h1>
+
+  <h4 class="text-gray-700 dark:text-gray-400">Are you sure you want to delete <span class="font-bold">{{ tech.name }}</span>?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes - Delete!" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-4 m-12 rounded focus:outline-none focus:shadow-outline">
+    <a class="text-gray-700 dark:text-gray-400" href="{% url 'techdetail' tech.id %}">Cancel</a>
+  </form>
+</div>
+{% endblock %}
