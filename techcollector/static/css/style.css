@@ -5,9 +5,10 @@ tr{
     padding: 24px;
 }
 
-#id_name,#id_type,#id_specs,#id_price {
+
+#id_name,#id_type,#id_specs,#id_price,#id_value,#id_perk{
     border-radius: 10px;
     max-width: 25rem;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity))
 }
- 
+
