@@ -12,5 +12,9 @@ urlpatterns = [
     path('tech/<int:tech_id>/add_provider',views.add_provider, 
     name='add_provider'),
     path('tech/<int:tech_id>/provider/<int:provider_id>,',views.delete_provider,name="delete_provider"),
-    path('tech/<int:tech_id>/assoc_perk/<int:perk_id>',views.assoc_perk,name='assoc_perk')
+    path('tech/<int:tech_id>/assoc_perk/<int:perk_id>',views.assoc_perk,name='assoc_perk'),
+
+    path('accounts/signup',views.signup, name='signup')
+
 ]
+   

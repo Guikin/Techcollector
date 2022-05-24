@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Add the login form -->
+<div class="w-fit mx-auto my-28 bg-slate-800 p-14 text-white">
+<h1 class=" text-sky-400 text-4xl p-5">Log In</h1>
+<form method="post" action="{% url 'login' %}" class="bg-slate-800 text-sky-400 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  {% csrf_token %}
+  {{ form.as_p}}
+  <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-4 m-3.5 rounded focus:outline-none focus:shadow-outline" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+</div>
+
+{% endblock %}

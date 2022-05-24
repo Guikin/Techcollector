@@ -3,6 +3,8 @@ from pyexpat import model
 from django.db import models
 from django.forms import CharField
 from django.urls import reverse
+from datetime import date
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -23,6 +25,8 @@ class Tech(models.Model):
     specs = models.TextField(max_length=255)
     price = models.IntegerField()
     perk = models.ManyToManyField(Perks)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
